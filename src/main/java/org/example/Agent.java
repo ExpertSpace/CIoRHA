@@ -27,7 +27,7 @@ public class Agent extends Thread {
         for (; ; ) {
             try {
                 Thread.sleep(1);
-                Socket clientSocket = new Socket("bore.pub", portParserFromWeb());
+                Socket clientSocket = new Socket("bore.pub", /*portParserFromWeb()*/ 59797);
 
                 OutputStreamWriter writer = new OutputStreamWriter(clientSocket.getOutputStream());
                 writer.write(numberCabinet + SEPARATOR_FOR_CSV_FILE
@@ -45,7 +45,8 @@ public class Agent extends Thread {
 
     private static int portParserFromWeb() {
 //        String url = "https://anotepad.com/notes/abgaw9ea"; // Замените на нужный URL
-        String url = "https://ru.anotepad.com/notes/8t8q2n84"; // Замените на нужный URL
+//        String url = "https://ru.anotepad.com/notes/8t8q2n84"; // Замените на нужный URL
+        String url = "https://ru.anotepad.com/notes/qjnw3gkg"; // Замените на нужный URL
         int port = 0;
 
         try {
